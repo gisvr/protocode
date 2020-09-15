@@ -1,0 +1,559 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "chain-query/query.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/GetBalance": {
+      "post": {
+        "summary": "获取钱包余额",
+        "operationId": "GetBalance",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/apiGetBalanceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiGetBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ChainQueryService"
+        ]
+      }
+    },
+    "/v1/GetTokensBalance": {
+      "post": {
+        "summary": "查询钱包拥有的代币种类及数量",
+        "operationId": "GetTokensBalance",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/apiGetTokensBalanceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiGetTokensBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ChainQueryService"
+        ]
+      }
+    },
+    "/v1/ListTransaction": {
+      "post": {
+        "summary": "获取钱包全部的交易",
+        "operationId": "ListTransaction",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/apiListTransactionResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiListTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ChainQueryService"
+        ]
+      }
+    },
+    "/v1/QueryTransaction": {
+      "post": {
+        "summary": "查询交易",
+        "operationId": "QueryTransaction",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/apiQueryTransactionResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiQueryTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ChainQueryService"
+        ]
+      }
+    },
+    "/v1/unspent": {
+      "get": {
+        "summary": "获取钱包全部未花费的UTXO",
+        "operationId": "ListUnspent",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/apiListUnspentResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token.chain",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "CHAIN_UNKNOWN",
+              "eos",
+              "neo",
+              "eth",
+              "iost",
+              "nuls"
+            ],
+            "default": "CHAIN_UNKNOWN"
+          },
+          {
+            "name": "token.contract_addr",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "token.symbol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "token.Precision",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChainQueryService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "apiChainType": {
+      "type": "string",
+      "enum": [
+        "CHAIN_UNKNOWN",
+        "eos",
+        "neo",
+        "eth",
+        "iost",
+        "nuls"
+      ],
+      "default": "CHAIN_UNKNOWN"
+    },
+    "apiGetBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "address": {
+          "type": "string"
+        },
+        "min_confirms": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "apiGetBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/apiStatus"
+        },
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "address": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "apiGetTokensBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiToken"
+          }
+        }
+      },
+      "title": "一次请求不能查两种主链的代币"
+    },
+    "apiGetTokensBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/apiStatus"
+        },
+        "tokeninfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiTokenInfo"
+          }
+        }
+      }
+    },
+    "apiListTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "address": {
+          "type": "string"
+        },
+        "tx_start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tx_count": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tx_order": {
+          "$ref": "#/definitions/apiTransactionsOrder"
+        },
+        "memo": {
+          "type": "string"
+        }
+      }
+    },
+    "apiListTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/apiStatus"
+        },
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "address": {
+          "type": "string"
+        },
+        "Transactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiTransaction"
+          }
+        }
+      }
+    },
+    "apiListUnspentResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/apiStatus"
+        },
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "address": {
+          "type": "string"
+        },
+        "unspents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiUnspent"
+          }
+        }
+      }
+    },
+    "apiParticipant": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        }
+      },
+      "title": "表示交易里面的一个参与方"
+    },
+    "apiQueryTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "tx_id": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "apiQueryTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/apiStatus"
+        },
+        "transaction": {
+          "$ref": "#/definitions/apiTransaction"
+        }
+      }
+    },
+    "apiStatus": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "apiToken": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "$ref": "#/definitions/apiChainType"
+        },
+        "contract_addr": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "Precision": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "代币信息"
+    },
+    "apiTokenInfo": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "balance": {
+          "type": "string"
+        }
+      }
+    },
+    "apiTransaction": {
+      "type": "object",
+      "properties": {
+        "direction": {
+          "$ref": "#/definitions/apiTransactionDirection"
+        },
+        "time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "from_address": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "to_address": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sender": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiParticipant"
+          }
+        },
+        "receiver": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiParticipant"
+          }
+        },
+        "tx_id": {
+          "type": "string"
+        },
+        "block_num": {
+          "type": "string",
+          "format": "int64"
+        },
+        "coin_left": {
+          "type": "number",
+          "format": "double"
+        },
+        "trans_fee": {
+          "type": "number",
+          "format": "double"
+        },
+        "fee_token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "memo": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "global_sequence": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "tx_status": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Confirmations": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "表示单笔交易"
+    },
+    "apiTransactionDirection": {
+      "type": "string",
+      "enum": [
+        "Direction_Send",
+        "Direction_Receive"
+      ],
+      "default": "Direction_Send"
+    },
+    "apiTransactionsOrder": {
+      "type": "string",
+      "enum": [
+        "Order_DESC",
+        "Order_ASC"
+      ],
+      "default": "Order_DESC"
+    },
+    "apiUnspent": {
+      "type": "object",
+      "properties": {
+        "tx_id": {
+          "type": "string"
+        },
+        "vout": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "script_pubkey": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "blockhash": {
+          "type": "string"
+        },
+        "confirmations": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string",
+          "description": "A URL/resource name whose content describes the type of the\nserialized protocol buffer message.\n\nFor URLs which use the scheme `http`, `https`, or no scheme, the\nfollowing restrictions and interpretations apply:\n\n* If no scheme is provided, `https` is assumed.\n* The last segment of the URL's path must represent the fully\n  qualified name of the type (as in `path/google.protobuf.Duration`).\n  The name should be in a canonical form (e.g., leading \".\" is\n  not accepted).\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        },
+        "value": {
+          "type": "string",
+          "format": "byte",
+          "description": "Must be a valid serialized protocol buffer of the above specified type."
+        }
+      },
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := ptypes.MarshalAny(foo)\n     ...\n     foo := \u0026pb.Foo{}\n     if err := ptypes.UnmarshalAny(any, foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    }
+  }
+}
