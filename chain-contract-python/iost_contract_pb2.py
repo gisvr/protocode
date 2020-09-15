@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='chain-contract/iost-contract.proto',
   package='contract.api',
   syntax='proto3',
-  serialized_pb=_b('\n\"chain-contract/iost-contract.proto\x12\x0c\x63ontract.api\x1a!chain-contract/neo-contract.proto\x1a\x13shared/status.proto\"A\n\nIostAction\x12\x10\n\x08\x63ontract\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tion_name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\"\xd6\x01\n\x0fIostInvokeParam\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x16.shared.api.InvokeType\x12\x12\n\npublic_key\x18\x02 \x01(\t\x12\x0e\n\x06seq_id\x18\x03 \x01(\t\x12\x32\n\tsign_type\x18\x04 \x01(\x0e\x32\x1f.contract.api.SignAlgorithmType\x12\x1a\n\x12signed_transaction\x18\x05 \x03(\t\x12)\n\x07\x61\x63tions\x18\x06 \x03(\x0b\x32\x18.contract.api.IostAction\"l\n\x10IostInvokeResult\x12\x0e\n\x06script\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\x12\x0e\n\x06seq_id\x18\x03 \x01(\t\x12\x1b\n\x13\x65ncoded_transaction\x18\x04 \x03(\t\x12\x0c\n\x04txid\x18\x05 \x01(\t*/\n\x11SignAlgorithmType\x12\r\n\tSecp256k1\x10\x00\x12\x0b\n\x07\x45\x64\x32\x35\x35\x31\x39\x10\x01\x42u\n\x1c\x63om.bibox.dex.proto.contractB\x11IostContractProtoZBgit.bibox.com/big4/protocode.git/chain-contract-go;pbchaincontractb\x06proto3')
+  serialized_pb=_b('\n\"chain-contract/iost-contract.proto\x12\x0c\x63ontract.api\x1a!chain-contract/neo-contract.proto\x1a\x13shared/status.proto\"A\n\nIostAction\x12\x10\n\x08\x63ontract\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tion_name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\"\xd6\x01\n\x0fIostInvokeParam\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x16.shared.api.InvokeType\x12\x12\n\npublic_key\x18\x02 \x01(\t\x12\x0e\n\x06seq_id\x18\x03 \x01(\t\x12\x32\n\tsign_type\x18\x04 \x01(\x0e\x32\x1f.contract.api.SignAlgorithmType\x12\x1a\n\x12signed_transaction\x18\x05 \x03(\t\x12)\n\x07\x61\x63tions\x18\x06 \x03(\x0b\x32\x18.contract.api.IostAction\"l\n\x10IostInvokeResult\x12\x0e\n\x06script\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\x12\x0e\n\x06seq_id\x18\x03 \x01(\t\x12\x1b\n\x13\x65ncoded_transaction\x18\x04 \x03(\t\x12\x0c\n\x04txid\x18\x05 \x01(\t*/\n\x11SignAlgorithmType\x12\r\n\tSecp256k1\x10\x00\x12\x0b\n\x07\x45\x64\x32\x35\x35\x31\x39\x10\x01\x42u\n\x1c\x63om.bibox.dex.proto.contractB\x11IostContractProtoZBgithub.com/gisvr/protocode/chain-contract-go;pbchaincontractb\x06proto3')
   ,
   dependencies=[chain__contract_dot_neo__contract__pb2.DESCRIPTOR,shared_dot_status__pb2.DESCRIPTOR,])
 
@@ -255,5 +255,5 @@ _sym_db.RegisterMessage(IostInvokeResult)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\034com.bibox.dex.proto.contractB\021IostContractProtoZBgit.bibox.com/big4/protocode.git/chain-contract-go;pbchaincontract'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\034com.bibox.dex.proto.contractB\021IostContractProtoZBgithub.com/gisvr/protocode/chain-contract-go;pbchaincontract'))
 # @@protoc_insertion_point(module_scope)

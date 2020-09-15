@@ -3875,7 +3875,7 @@ public final class IostContractProto {
       "\030\004 \003(\t\022\014\n\004txid\030\005 \001(\t*/\n\021SignAlgorithmTyp" +
       "e\022\r\n\tSecp256k1\020\000\022\013\n\007Ed25519\020\001Bu\n\034com.bib" +
       "ox.dex.proto.contractB\021IostContractProto" +
-      "ZBgit.bibox.com/big4/protocode.git/chain" +
+      "ZBgithub.com/gisvr/protocode/chain" +
       "-contract-go;pbchaincontractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

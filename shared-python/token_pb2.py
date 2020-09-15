@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='shared/token.proto',
   package='shared.api',
   syntax='proto3',
-  serialized_pb=_b('\n\x12shared/token.proto\x12\nshared.api\"g\n\x05Token\x12$\n\x05\x63hain\x18\x01 \x01(\x0e\x32\x15.shared.api.ChainType\x12\x15\n\rcontract_addr\x18\x03 \x01(\t\x12\x0e\n\x06symbol\x18\x04 \x01(\t\x12\x11\n\tPrecision\x18\x05 \x01(\x05*M\n\tChainType\x12\x11\n\rCHAIN_UNKNOWN\x10\x00\x12\x07\n\x03\x65os\x10\x01\x12\x07\n\x03neo\x10\x02\x12\x07\n\x03\x65th\x10\x03\x12\x08\n\x04iost\x10\x04\x12\x08\n\x04nuls\x10\x05\x42]\n\x1a\x63om.bibox.dex.proto.sharedB\nTokenProtoZ3git.bibox.com/big4/protocode.git/shared-go;pbsharedb\x06proto3')
+  serialized_pb=_b('\n\x12shared/token.proto\x12\nshared.api\"g\n\x05Token\x12$\n\x05\x63hain\x18\x01 \x01(\x0e\x32\x15.shared.api.ChainType\x12\x15\n\rcontract_addr\x18\x03 \x01(\t\x12\x0e\n\x06symbol\x18\x04 \x01(\t\x12\x11\n\tPrecision\x18\x05 \x01(\x05*M\n\tChainType\x12\x11\n\rCHAIN_UNKNOWN\x10\x00\x12\x07\n\x03\x65os\x10\x01\x12\x07\n\x03neo\x10\x02\x12\x07\n\x03\x65th\x10\x03\x12\x08\n\x04iost\x10\x04\x12\x08\n\x04nuls\x10\x05\x42]\n\x1a\x63om.bibox.dex.proto.sharedB\nTokenProtoZ3github.com/gisvr/protocode/shared-go;pbsharedb\x06proto3')
 )
 
 _CHAINTYPE = _descriptor.EnumDescriptor(
@@ -136,5 +136,5 @@ _sym_db.RegisterMessage(Token)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\032com.bibox.dex.proto.sharedB\nTokenProtoZ3git.bibox.com/big4/protocode.git/shared-go;pbshared'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\032com.bibox.dex.proto.sharedB\nTokenProtoZ3github.com/gisvr/protocode/shared-go;pbshared'))
 # @@protoc_insertion_point(module_scope)

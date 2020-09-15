@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='shared/status.proto',
   package='shared.api',
   syntax='proto3',
-  serialized_pb=_b('\n\x13shared/status.proto\x12\nshared.api\x1a\x19google/protobuf/any.proto\"N\n\x06Status\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\x05\x12%\n\x07\x64\x65tails\x18\x03 \x03(\x0b\x32\x14.google.protobuf.Any*<\n\nInvokeType\x12\n\n\x06UNKOWN\x10\x00\x12\x08\n\x04Read\x10\x01\x12\t\n\x05Write\x10\x02\x12\r\n\tBroadcast\x10\x03\x42^\n\x1a\x63om.bibox.dex.proto.sharedB\x0bStatusProtoZ3git.bibox.com/big4/protocode.git/shared-go;pbsharedb\x06proto3')
+  serialized_pb=_b('\n\x13shared/status.proto\x12\nshared.api\x1a\x19google/protobuf/any.proto\"N\n\x06Status\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\x05\x12%\n\x07\x64\x65tails\x18\x03 \x03(\x0b\x32\x14.google.protobuf.Any*<\n\nInvokeType\x12\n\n\x06UNKOWN\x10\x00\x12\x08\n\x04Read\x10\x01\x12\t\n\x05Write\x10\x02\x12\r\n\tBroadcast\x10\x03\x42^\n\x1a\x63om.bibox.dex.proto.sharedB\x0bStatusProtoZ3github.com/gisvr/protocode/shared-go;pbsharedb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -121,5 +121,5 @@ _sym_db.RegisterMessage(Status)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\032com.bibox.dex.proto.sharedB\013StatusProtoZ3git.bibox.com/big4/protocode.git/shared-go;pbshared'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\032com.bibox.dex.proto.sharedB\013StatusProtoZ3github.com/gisvr/protocode/shared-go;pbshared'))
 # @@protoc_insertion_point(module_scope)

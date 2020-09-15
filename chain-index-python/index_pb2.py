@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='chain-index/index.proto',
   package='chainindex.api',
   syntax='proto3',
-  serialized_pb=_b('\n\x17\x63hain-index/index.proto\x12\x0e\x63hainindex.api\x1a\x12shared/token.proto\x1a\x13shared/status.proto\"\xac\x01\n\x15SubscribeEventRequest\x12$\n\x05\x63hain\x18\x01 \x01(\x0e\x32\x15.shared.api.ChainType\x12\x10\n\x08\x61\x64\x64resss\x18\x02 \x03(\t\x12\x17\n\x0f\x62lock_num_start\x18\x03 \x01(\x03\x12\x18\n\x10\x62lock_time_start\x18\x04 \x01(\x03\x12(\n\x05\x65vent\x18\x05 \x01(\x0e\x32\x19.chainindex.api.EventType\"\xe7\x01\n\x15SubscribeEventReponse\x12\"\n\x06status\x18\x01 \x01(\x0b\x32\x12.shared.api.Status\x12$\n\x05\x63hain\x18\x02 \x01(\x0e\x32\x15.shared.api.ChainType\x12(\n\x05\x65vent\x18\x03 \x01(\x0e\x32\x19.chainindex.api.EventType\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12\x11\n\tblock_num\x18\x05 \x01(\x03\x12\x12\n\nblock_time\x18\x06 \x01(\x03\x12\x12\n\nblock_hash\x18\x07 \x01(\t\x12\x0e\n\x06txjson\x18\x08 \x01(\t*.\n\tEventType\x12\t\n\x05\x45V_TX\x10\x00\x12\n\n\x06\x45V_ACT\x10\x01\x12\n\n\x05\x45V_HB\x10\xe6\x07\x32w\n\x11\x43hainIndexService\x12\x62\n\x0eSubscribeEvent\x12%.chainindex.api.SubscribeEventRequest\x1a%.chainindex.api.SubscribeEventReponse\"\x00\x30\x01\x42\x65\n\x19\x63om.bibox.dex.proto.indexB\nIndexProtoZ<git.bibox.com/big4/protocode.git/chain-index-go;pbchainindexb\x06proto3')
+  serialized_pb=_b('\n\x17\x63hain-index/index.proto\x12\x0e\x63hainindex.api\x1a\x12shared/token.proto\x1a\x13shared/status.proto\"\xac\x01\n\x15SubscribeEventRequest\x12$\n\x05\x63hain\x18\x01 \x01(\x0e\x32\x15.shared.api.ChainType\x12\x10\n\x08\x61\x64\x64resss\x18\x02 \x03(\t\x12\x17\n\x0f\x62lock_num_start\x18\x03 \x01(\x03\x12\x18\n\x10\x62lock_time_start\x18\x04 \x01(\x03\x12(\n\x05\x65vent\x18\x05 \x01(\x0e\x32\x19.chainindex.api.EventType\"\xe7\x01\n\x15SubscribeEventReponse\x12\"\n\x06status\x18\x01 \x01(\x0b\x32\x12.shared.api.Status\x12$\n\x05\x63hain\x18\x02 \x01(\x0e\x32\x15.shared.api.ChainType\x12(\n\x05\x65vent\x18\x03 \x01(\x0e\x32\x19.chainindex.api.EventType\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12\x11\n\tblock_num\x18\x05 \x01(\x03\x12\x12\n\nblock_time\x18\x06 \x01(\x03\x12\x12\n\nblock_hash\x18\x07 \x01(\t\x12\x0e\n\x06txjson\x18\x08 \x01(\t*.\n\tEventType\x12\t\n\x05\x45V_TX\x10\x00\x12\n\n\x06\x45V_ACT\x10\x01\x12\n\n\x05\x45V_HB\x10\xe6\x07\x32w\n\x11\x43hainIndexService\x12\x62\n\x0eSubscribeEvent\x12%.chainindex.api.SubscribeEventRequest\x1a%.chainindex.api.SubscribeEventReponse\"\x00\x30\x01\x42\x65\n\x19\x63om.bibox.dex.proto.indexB\nIndexProtoZ<github.com/gisvr/protocode/chain-index-go;pbchainindexb\x06proto3')
   ,
   dependencies=[shared_dot_token__pb2.DESCRIPTOR,shared_dot_status__pb2.DESCRIPTOR,])
 
@@ -223,7 +223,7 @@ _sym_db.RegisterMessage(SubscribeEventReponse)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\031com.bibox.dex.proto.indexB\nIndexProtoZ<git.bibox.com/big4/protocode.git/chain-index-go;pbchainindex'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\031com.bibox.dex.proto.indexB\nIndexProtoZ<github.com/gisvr/protocode/chain-index-go;pbchainindex'))
 
 _CHAININDEXSERVICE = _descriptor.ServiceDescriptor(
   name='ChainIndexService',

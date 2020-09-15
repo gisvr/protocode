@@ -18225,7 +18225,7 @@ public final class QueryProto {
       "equest\032(.chainquery.api.GetTokensBalance" +
       "Response\"\037\202\323\344\223\002\031\"\024/v1/GetTokensBalance:\001" +
       "*Be\n\031com.bibox.dex.proto.queryB\nQueryPro" +
-      "toZ<git.bibox.com/big4/protocode.git/cha" +
+      "toZ<github.com/gisvr/protocode/cha" +
       "in-query-go;pbchainqueryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

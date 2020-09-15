@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='chain-contract/nuls-contract.proto',
   package='contract.api',
   syntax='proto3',
-  serialized_pb=_b('\n\"chain-contract/nuls-contract.proto\x12\x0c\x63ontract.api\x1a\x13shared/status.proto\"\xb1\x01\n\x13NulsInvokeExtension\x12\x0f\n\x07\x63hainId\x18\x01 \x01(\x05\x12\x15\n\rsenderBalance\x18\x02 \x01(\t\x12\r\n\x05nonce\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\x12\x10\n\x08gasLimit\x18\x05 \x01(\t\x12\x12\n\nmethodDesc\x18\x06 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x07 \x03(\t\x12\x10\n\x08\x61rgsType\x18\x08 \x03(\t\x12\x0e\n\x06remark\x18\t \x01(\t\"\xa6\x01\n\x0fNulsInvokeParam\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x16.shared.api.InvokeType\x12\x0c\n\x04hash\x18\x02 \x01(\t\x12\x0e\n\x06sender\x18\x03 \x01(\t\x12\x19\n\x11signedTransaction\x18\x04 \x01(\t\x12\x34\n\textension\x18\x05 \x01(\x0b\x32!.contract.api.NulsInvokeExtension\"<\n\x10NulsInvokeResult\x12\x1a\n\x12\x65ncodedTransaction\x18\x01 \x03(\t\x12\x0c\n\x04txId\x18\x02 \x01(\tBu\n\x1c\x63om.bibox.dex.proto.contractB\x11NulsContractProtoZBgit.bibox.com/big4/protocode.git/chain-contract-go;pbchaincontractb\x06proto3')
+  serialized_pb=_b('\n\"chain-contract/nuls-contract.proto\x12\x0c\x63ontract.api\x1a\x13shared/status.proto\"\xb1\x01\n\x13NulsInvokeExtension\x12\x0f\n\x07\x63hainId\x18\x01 \x01(\x05\x12\x15\n\rsenderBalance\x18\x02 \x01(\t\x12\r\n\x05nonce\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\x12\x10\n\x08gasLimit\x18\x05 \x01(\t\x12\x12\n\nmethodDesc\x18\x06 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x07 \x03(\t\x12\x10\n\x08\x61rgsType\x18\x08 \x03(\t\x12\x0e\n\x06remark\x18\t \x01(\t\"\xa6\x01\n\x0fNulsInvokeParam\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x16.shared.api.InvokeType\x12\x0c\n\x04hash\x18\x02 \x01(\t\x12\x0e\n\x06sender\x18\x03 \x01(\t\x12\x19\n\x11signedTransaction\x18\x04 \x01(\t\x12\x34\n\textension\x18\x05 \x01(\x0b\x32!.contract.api.NulsInvokeExtension\"<\n\x10NulsInvokeResult\x12\x1a\n\x12\x65ncodedTransaction\x18\x01 \x03(\t\x12\x0c\n\x04txId\x18\x02 \x01(\tBu\n\x1c\x63om.bibox.dex.proto.contractB\x11NulsContractProtoZBgithub.com/gisvr/protocode/chain-contract-go;pbchaincontractb\x06proto3')
   ,
   dependencies=[shared_dot_status__pb2.DESCRIPTOR,])
 
@@ -240,5 +240,5 @@ _sym_db.RegisterMessage(NulsInvokeResult)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\034com.bibox.dex.proto.contractB\021NulsContractProtoZBgit.bibox.com/big4/protocode.git/chain-contract-go;pbchaincontract'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\034com.bibox.dex.proto.contractB\021NulsContractProtoZBgithub.com/gisvr/protocode/chain-contract-go;pbchaincontract'))
 # @@protoc_insertion_point(module_scope)

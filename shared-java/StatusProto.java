@@ -1110,7 +1110,7 @@ public final class StatusProto {
       ".google.protobuf.Any*<\n\nInvokeType\022\n\n\006UN" +
       "KOWN\020\000\022\010\n\004Read\020\001\022\t\n\005Write\020\002\022\r\n\tBroadcast" +
       "\020\003B^\n\032com.bibox.dex.proto.sharedB\013Status" +
-      "ProtoZ3git.bibox.com/big4/protocode.git/" +
+      "ProtoZ3github.com/gisvr/protocode/" +
       "shared-go;pbsharedb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
